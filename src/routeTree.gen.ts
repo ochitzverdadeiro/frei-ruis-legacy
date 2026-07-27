@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
 import { Route as HistoriaRouteImport } from './routes/historia'
+import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as IndexRouteImport } from './routes/index'
 
 const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
@@ -23,6 +24,11 @@ const HistoriaRoute = HistoriaRouteImport.update({
   path: '/historia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/historia' | '/linha-do-tempo'
+  fullPaths: '/' | '/galeria' | '/historia' | '/linha-do-tempo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/historia' | '/linha-do-tempo'
-  id: '__root__' | '/' | '/historia' | '/linha-do-tempo'
+  to: '/' | '/galeria' | '/historia' | '/linha-do-tempo'
+  id: '__root__' | '/' | '/galeria' | '/historia' | '/linha-do-tempo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GaleriaRoute: typeof GaleriaRoute
   HistoriaRoute: typeof HistoriaRoute
   LinhaDoTempoRoute: typeof LinhaDoTempoRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HistoriaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GaleriaRoute: GaleriaRoute,
   HistoriaRoute: HistoriaRoute,
   LinhaDoTempoRoute: LinhaDoTempoRoute,
 }
