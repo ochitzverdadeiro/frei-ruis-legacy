@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
 import { Route as HomenagensRouteImport } from './routes/homenagens'
 import { Route as HistoriaRouteImport } from './routes/historia'
@@ -17,6 +18,11 @@ import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
   id: '/linha-do-tempo',
   path: '/linha-do-tempo',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/historia'
     | '/homenagens'
     | '/linha-do-tempo'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/historia'
     | '/homenagens'
     | '/linha-do-tempo'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/historia'
     | '/homenagens'
     | '/linha-do-tempo'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,10 +131,18 @@ export interface RootRouteChildren {
   HistoriaRoute: typeof HistoriaRoute
   HomenagensRoute: typeof HomenagensRoute
   LinhaDoTempoRoute: typeof LinhaDoTempoRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/linha-do-tempo': {
       id: '/linha-do-tempo'
       path: '/linha-do-tempo'
@@ -183,7 +203,18 @@ const rootRouteChildren: RootRouteChildren = {
   HistoriaRoute: HistoriaRoute,
   HomenagensRoute: HomenagensRoute,
   LinhaDoTempoRoute: LinhaDoTempoRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
