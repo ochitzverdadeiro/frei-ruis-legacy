@@ -14,7 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      homenagens: {
+        Row: {
+          cidade: string | null
+          created_at: string
+          foto_url: string | null
+          id: string
+          mensagem: string
+          nome: string
+          publicada: boolean
+          relacao: string | null
+        }
+        Insert: {
+          cidade?: string | null
+          created_at?: string
+          foto_url?: string | null
+          id?: string
+          mensagem: string
+          nome: string
+          publicada?: boolean
+          relacao?: string | null
+        }
+        Update: {
+          cidade?: string | null
+          created_at?: string
+          foto_url?: string | null
+          id?: string
+          mensagem?: string
+          nome?: string
+          publicada?: boolean
+          relacao?: string | null
+        }
+        Relationships: []
+      }
+      mensagens_contato: {
+        Row: {
+          assunto: string | null
+          created_at: string
+          email: string
+          id: string
+          mensagem: string
+          nome: string
+          telefone: string | null
+        }
+        Insert: {
+          assunto?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          mensagem: string
+          nome: string
+          telefone?: string | null
+        }
+        Update: {
+          assunto?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          mensagem?: string
+          nome?: string
+          telefone?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
