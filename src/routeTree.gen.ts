@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
 import { Route as HistoriaRouteImport } from './routes/historia'
 import { Route as IndexRouteImport } from './routes/index'
 
+const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
+  id: '/linha-do-tempo',
+  path: '/linha-do-tempo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HistoriaRoute = HistoriaRouteImport.update({
   id: '/historia',
   path: '/historia',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/historia': typeof HistoriaRoute
+  '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/historia': typeof HistoriaRoute
+  '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/historia': typeof HistoriaRoute
+  '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/historia'
+  fullPaths: '/' | '/historia' | '/linha-do-tempo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/historia'
-  id: '__root__' | '/' | '/historia'
+  to: '/' | '/historia' | '/linha-do-tempo'
+  id: '__root__' | '/' | '/historia' | '/linha-do-tempo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   HistoriaRoute: typeof HistoriaRoute
+  LinhaDoTempoRoute: typeof LinhaDoTempoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/linha-do-tempo': {
+      id: '/linha-do-tempo'
+      path: '/linha-do-tempo'
+      fullPath: '/linha-do-tempo'
+      preLoaderRoute: typeof LinhaDoTempoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/historia': {
       id: '/historia'
       path: '/historia'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   HistoriaRoute: HistoriaRoute,
+  LinhaDoTempoRoute: LinhaDoTempoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
