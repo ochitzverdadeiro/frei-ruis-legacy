@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
+import { Route as HomenagensRouteImport } from './routes/homenagens'
 import { Route as HistoriaRouteImport } from './routes/historia'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as DepoimentosRouteImport } from './routes/depoimentos'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
   id: '/linha-do-tempo',
   path: '/linha-do-tempo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomenagensRoute = HomenagensRouteImport.update({
+  id: '/homenagens',
+  path: '/homenagens',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HistoriaRoute = HistoriaRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/depoimentos': typeof DepoimentosRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
+  '/homenagens': typeof HomenagensRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/depoimentos': typeof DepoimentosRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
+  '/homenagens': typeof HomenagensRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRoutesById {
@@ -61,19 +69,33 @@ export interface FileRoutesById {
   '/depoimentos': typeof DepoimentosRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
+  '/homenagens': typeof HomenagensRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/depoimentos' | '/galeria' | '/historia' | '/linha-do-tempo'
+  fullPaths:
+    | '/'
+    | '/depoimentos'
+    | '/galeria'
+    | '/historia'
+    | '/homenagens'
+    | '/linha-do-tempo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/depoimentos' | '/galeria' | '/historia' | '/linha-do-tempo'
+  to:
+    | '/'
+    | '/depoimentos'
+    | '/galeria'
+    | '/historia'
+    | '/homenagens'
+    | '/linha-do-tempo'
   id:
     | '__root__'
     | '/'
     | '/depoimentos'
     | '/galeria'
     | '/historia'
+    | '/homenagens'
     | '/linha-do-tempo'
   fileRoutesById: FileRoutesById
 }
@@ -82,6 +104,7 @@ export interface RootRouteChildren {
   DepoimentosRoute: typeof DepoimentosRoute
   GaleriaRoute: typeof GaleriaRoute
   HistoriaRoute: typeof HistoriaRoute
+  HomenagensRoute: typeof HomenagensRoute
   LinhaDoTempoRoute: typeof LinhaDoTempoRoute
 }
 
@@ -92,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/linha-do-tempo'
       fullPath: '/linha-do-tempo'
       preLoaderRoute: typeof LinhaDoTempoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homenagens': {
+      id: '/homenagens'
+      path: '/homenagens'
+      fullPath: '/homenagens'
+      preLoaderRoute: typeof HomenagensRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/historia': {
@@ -130,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   DepoimentosRoute: DepoimentosRoute,
   GaleriaRoute: GaleriaRoute,
   HistoriaRoute: HistoriaRoute,
+  HomenagensRoute: HomenagensRoute,
   LinhaDoTempoRoute: LinhaDoTempoRoute,
 }
 export const routeTree = rootRouteImport
