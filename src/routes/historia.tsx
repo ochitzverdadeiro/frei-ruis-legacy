@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import igrejaRodeio from "@/assets/igreja-rodeio.jpg.asset.json";
-import celebracao from "@/assets/celebracao.jpg.asset.json";
+import rodeioVista from "@/assets/rodeio-vista.jpg.asset.json";
 import eremiterio from "@/assets/eremiterio.jpg.asset.json";
 
 export const Route = createFileRoute("/historia")({
@@ -48,13 +47,13 @@ function Historia() {
 
         <figure className="not-prose my-10">
           <img
-            src={igrejaRodeio.url}
-            alt="Igreja Matriz de São Francisco de Assis, em Rodeio (SC)"
+            src={rodeioVista.url}
+            alt="Vista de Rodeio (SC), com a Igreja Matriz ao centro do vale"
             loading="lazy"
             className="w-full rounded-lg border border-border object-cover shadow-[var(--shadow-frame)]"
           />
           <figcaption className="mt-3 text-xs text-muted-foreground">
-            Igreja Matriz de São Francisco de Assis, em Rodeio (SC) — onde tudo começou.
+            Rodeio (SC), no Vale do Itajaí — onde tudo começou.
           </figcaption>
         </figure>
 
@@ -99,17 +98,6 @@ function Historia() {
           fugia dos palcos e das honrarias.
         </p>
 
-        <figure className="not-prose my-10">
-          <img
-            src={celebracao.url}
-            alt="Celebração religiosa presidida por Frei Rui"
-            loading="lazy"
-            className="w-full rounded-lg border border-border object-cover shadow-[var(--shadow-frame)]"
-          />
-          <figcaption className="mt-3 text-xs text-muted-foreground">
-            Entre o povo: a celebração como encontro, nunca como cerimônia distante.
-          </figcaption>
-        </figure>
 
         <h2 className="font-serif text-2xl text-foreground">O pomar, os pássaros e a música</h2>
         <p>

@@ -3,7 +3,6 @@ import pracaImigrantes from "@/assets/praca-imigrantes.jpg.asset.json";
 import totemImigrantes from "@/assets/totem-imigrantes.jpg.asset.json";
 import rodeioVista from "@/assets/rodeio-vista.jpg.asset.json";
 import lembrancaOrdenacao from "@/assets/lembranca-ordenacao.jpg.asset.json";
-import celebracao from "@/assets/celebracao.jpg.asset.json";
 import eremiterio from "@/assets/eremiterio.jpg.asset.json";
 import familiaAntiga from "@/assets/familia-antiga.jpg.asset.json";
 
@@ -50,7 +49,7 @@ export const linhaDoTempo: MomentoLinhaTempo[] = [
     titulo: "O menino coroinha",
     texto:
       "Estuda na Escola Oswaldo Cruz, percorrendo o caminho de pés descalços com a irmã Lourdes. Serve como coroinha na capela das Irmãs Catequistas Franciscanas e divide o próprio lanche com o colega que só tinha pão seco.",
-    imagem: { url: igrejaRodeio.url, alt: "Igreja Matriz de São Francisco de Assis, em Rodeio (SC)" },
+    imagem: { url: rodeioVista.url, alt: "Vista de Rodeio (SC), com a Igreja Matriz ao centro do vale" },
   },
   {
     ano: "1954",
@@ -70,7 +69,6 @@ export const linhaDoTempo: MomentoLinhaTempo[] = [
     titulo: "Missão em Duque de Caxias e Concórdia",
     texto:
       "Nas primeiras missões, distribui aos pobres tudo o que recebe — vinhos, roupas, sapatos. Nada retinha para si. Amizades feitas ali acompanhariam a família Depiné por décadas.",
-    imagem: { url: celebracao.url, alt: "Celebração presidida por Frei Rui" },
   },
   {
     ano: "Piraquara (PR)",
@@ -146,20 +144,14 @@ export const galeria: FotoGaleria[] = [
   },
   {
     url: igrejaRodeio.url,
-    alt: "Igreja Matriz de São Francisco de Assis, em Rodeio",
-    legenda: "Igreja Matriz de São Francisco de Assis, Rodeio (SC)",
+    alt: "Rua de Rodeio, Santa Catarina",
+    legenda: "As ruas de Rodeio (SC), cenário da infância",
     fase: "Família",
   },
   {
     url: lembrancaOrdenacao.url,
     alt: "Lembrança impressa da ordenação sacerdotal de Rui Depiné em 1971",
     legenda: "Lembrança da ordenação sacerdotal — Rodeio, 18 de julho de 1971",
-    fase: "Vida religiosa",
-  },
-  {
-    url: celebracao.url,
-    alt: "Celebração religiosa presidida por Frei Rui",
-    legenda: "Uma celebração entre o povo",
     fase: "Vida religiosa",
   },
   {
