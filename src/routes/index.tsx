@@ -28,8 +28,16 @@ function Inicio() {
   return (
     <>
       <section className="relative isolate border-b border-border/70 bg-secondary">
-        <div className="relative mx-auto flex min-h-[62vh] max-w-4xl flex-col items-center justify-center px-5 py-24 text-center">
-          <span className="eyebrow">1942 — 2020</span>
+        <div className="mx-auto flex min-h-[62vh] max-w-6xl flex-col items-center justify-center px-5 py-16 text-center sm:py-24">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg border-4 border-background bg-background shadow-frame sm:max-w-[220px]">
+            <img
+              src={freiRuiCapa.url}
+              alt="Frei Rui Guido Depiné"
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <span className="eyebrow mt-8">1942 — 2020</span>
           <h1 className="mt-5 font-serif text-4xl leading-tight text-foreground sm:text-6xl">
             Frei Rui Guido Depiné
           </h1>
