@@ -129,60 +129,33 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function Cabecalho() {
-  const [aberto, setAberto] = useState(false);
-
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur">
+      <nav className="border-b border-border/50 bg-secondary/50">
+        <div className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto px-5 py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {navegacao.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              activeOptions={{ exact: item.to === "/" }}
+              activeProps={{ className: "text-accent" }}
+              inactiveProps={{ className: "text-muted-foreground" }}
+              className="shrink-0 text-sm whitespace-nowrap transition-colors hover:text-foreground"
+            >
+              {item.rotulo}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-        <Link to="/" className="group flex flex-col leading-tight" onClick={() => setAberto(false)}>
+        <Link to="/" className="group flex flex-col leading-tight">
           <span className="eyebrow">Legado</span>
           <span className="font-serif text-xl text-foreground transition-colors group-hover:text-accent">
             Frei Rui Guido Depiné
           </span>
         </Link>
-
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navegacao.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              activeOptions={{ exact: item.to === "/" }}
-              activeProps={{ className: "text-accent" }}
-              inactiveProps={{ className: "text-muted-foreground" }}
-              className="text-sm transition-colors hover:text-foreground"
-            >
-              {item.rotulo}
-            </Link>
-          ))}
-        </nav>
-
-        <button
-          type="button"
-          aria-label={aberto ? "Fechar menu" : "Abrir menu"}
-          onClick={() => setAberto((v) => !v)}
-          className="rounded-md border border-border p-2 text-foreground lg:hidden"
-        >
-          {aberto ? <X className="size-4" /> : <Menu className="size-4" />}
-        </button>
       </div>
-
-      {aberto ? (
-        <nav className="border-t border-border/70 bg-background px-5 pb-4 lg:hidden">
-          {navegacao.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={() => setAberto(false)}
-              activeOptions={{ exact: item.to === "/" }}
-              activeProps={{ className: "text-accent" }}
-              inactiveProps={{ className: "text-muted-foreground" }}
-              className="block border-b border-border/50 py-3 text-sm last:border-0"
-            >
-              {item.rotulo}
-            </Link>
-          ))}
-        </nav>
-      ) : null}
     </header>
   );
 }
