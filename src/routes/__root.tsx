@@ -167,9 +167,6 @@ function Rodape() {
         <div>
           <p className="font-serif text-lg text-foreground">Frei Rui Guido Depiné, OFM</p>
           <p className="mt-1 text-sm text-muted-foreground">8/10/1942 — 12/06/2020</p>
-          <p className="mt-4 max-w-xs font-serif text-base italic text-muted-foreground">
-            “A vida é uma esperança que caminha.”
-          </p>
         </div>
         <div>
           <p className="eyebrow">Navegue</p>
