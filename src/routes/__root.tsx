@@ -87,11 +87,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Memorial Frei Rui Guido Depiné" },
+      { title: "Legado Frei Rui Guido Depiné" },
       {
         name: "description",
         content:
-          "Memorial dedicado à vida e ao legado de Frei Rui Guido Depiné, OFM (1942–2020).",
+          "Legado dedicado à vida e ao legado de Frei Rui Guido Depiné, OFM (1942–2020).",
       },
       { name: "author", content: "Família Depiné" },
       { property: "og:type", content: "website" },
@@ -135,7 +135,7 @@ function Cabecalho() {
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
         <Link to="/" className="group flex flex-col leading-tight" onClick={() => setAberto(false)}>
-          <span className="eyebrow">Memorial</span>
+          <span className="eyebrow">Legado</span>
           <span className="font-serif text-xl text-foreground transition-colors group-hover:text-accent">
             Frei Rui Guido Depiné
           </span>
@@ -216,7 +216,7 @@ function Rodape() {
         <div>
           <p className="eyebrow">Memória viva</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Este memorial é mantido pela família Depiné e por amigos, para que a história de
+            Este legado é mantido pela família Depiné e por amigos, para que a história de
             Frei Rui continue inspirando novas gerações.
           </p>
           <p className="mt-4 text-xs text-muted-foreground">Paz e Bem.</p>
