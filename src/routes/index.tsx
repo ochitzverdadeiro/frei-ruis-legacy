@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroAmanhecer from "@/assets/hero-amanhecer.jpg";
 import { perfil, depoimentos, linhaDoTempo } from "@/data/frei-rui";
 
 export const Route = createFileRoute("/")({
@@ -27,44 +26,20 @@ function Inicio() {
 
   return (
     <>
-      <section className="relative isolate">
-        <img
-          src={heroAmanhecer}
-          alt="Amanhecer sobre o vale de montanhas e araucárias, com uma pequena igreja branca"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 size-full object-cover"
-        />
-        <div className="absolute inset-0 overlay-dawn" />
-        <div className="relative mx-auto flex min-h-[78vh] max-w-4xl flex-col items-center justify-center px-5 py-24 text-center">
-          <span className="eyebrow text-sepia-foreground/80">1942 — 2020</span>
-          <h1 className="mt-5 font-serif text-4xl leading-tight text-sepia-foreground sm:text-6xl">
+      <section className="relative isolate border-b border-border/70 bg-secondary">
+        <div className="relative mx-auto flex min-h-[62vh] max-w-4xl flex-col items-center justify-center px-5 py-24 text-center">
+          <span className="eyebrow">1942 — 2020</span>
+          <h1 className="mt-5 font-serif text-4xl leading-tight text-foreground sm:text-6xl">
             Frei Rui Guido Depiné
           </h1>
           <span className="rule-gold mt-6" />
-          <p className="mt-6 max-w-2xl font-serif text-xl italic text-sepia-foreground/90 sm:text-2xl">
-            “{perfil.lema}”
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sepia-foreground/85 sm:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             Frade da Ordem Franciscana Menor. Homem simples, alegre e resiliente, que fez da
             própria vida um caminho de serviço aos mais pobres.
           </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/historia"
-              className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Conhecer sua história
-            </Link>
-            <Link
-              to="/homenagens"
-              className="rounded-md border border-sepia-foreground/50 px-6 py-3 text-sm font-medium text-sepia-foreground transition-colors hover:bg-sepia-foreground/10"
-            >
-              Deixe sua homenagem
-            </Link>
-          </div>
         </div>
       </section>
+
 
       <section className="mx-auto max-w-5xl px-5 py-20">
         <div className="grid gap-10 sm:grid-cols-3">
