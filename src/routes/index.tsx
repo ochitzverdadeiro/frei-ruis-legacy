@@ -28,29 +28,24 @@ function Inicio() {
   return (
     <>
       <section className="relative isolate border-b border-border/70 bg-secondary">
-        <div className="mx-auto grid min-h-[62vh] max-w-6xl items-center gap-10 px-5 py-16 sm:grid-cols-2 sm:py-24">
-          <div className="flex flex-col items-start text-left">
-            <span className="eyebrow">1942 — 2020</span>
-            <h1 className="mt-5 font-serif text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
-              Frei Rui Guido Depiné
-            </h1>
-            <span className="rule-gold mt-6" />
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Frade da Ordem Franciscana Menor. Homem simples, alegre e resiliente, que fez da
-              própria vida um caminho de serviço aos mais pobres.
-            </p>
+        <div className="mx-auto flex min-h-[62vh] max-w-6xl flex-col items-center justify-center px-5 py-16 text-center sm:py-24">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg border-4 border-background bg-background shadow-frame sm:max-w-[220px]">
+            <img
+              src={freiRuiCapa.url}
+              alt="Frei Rui Guido Depiné"
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
           </div>
-
-          <div className="flex items-center justify-center sm:justify-end">
-            <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-lg border-4 border-background bg-background shadow-frame sm:max-w-[320px]">
-              <img
-                src={freiRuiCapa.url}
-                alt="Frei Rui Guido Depiné"
-                className="h-full w-full object-cover"
-                loading="eager"
-              />
-            </div>
-          </div>
+          <span className="eyebrow mt-8">1942 — 2020</span>
+          <h1 className="mt-5 font-serif text-4xl leading-tight text-foreground sm:text-6xl">
+            Frei Rui Guido Depiné
+          </h1>
+          <span className="rule-gold mt-6" />
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Frade da Ordem Franciscana Menor. Homem simples, alegre e resiliente, que fez da
+            própria vida um caminho de serviço aos mais pobres.
+          </p>
         </div>
       </section>
 
