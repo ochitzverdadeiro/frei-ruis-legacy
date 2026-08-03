@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { perfil, depoimentos, linhaDoTempo } from "@/data/frei-rui";
+import { createFileRoute } from "@tanstack/react-router";
+import { perfil } from "@/data/frei-rui";
 import freiRuiCapa from "@/assets/frei-rui-capa.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -23,8 +23,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Inicio() {
-  const destaques = linhaDoTempo.slice(0, 3);
-
   return (
     <>
       <section className="relative isolate border-b border-border/70 bg-secondary">
@@ -49,7 +47,6 @@ function Inicio() {
         </div>
       </section>
 
-
       <section className="mx-auto max-w-5xl px-5 py-20">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
@@ -67,65 +64,19 @@ function Inicio() {
             <p className="mt-2 font-serif text-lg text-foreground">{perfil.falecimento}</p>
           </div>
         </div>
-
-        <div className="mt-16 surface-parchment rounded-lg p-8 sm:p-12">
-          <h2 className="font-serif text-3xl text-foreground">Uma homenagem</h2>
-          <span className="rule-gold mt-4" />
-          <div className="prose-memorial mt-6 max-w-3xl">
-            <p>{perfil.resumo}</p>
-            <p>
-              Movido por uma fé inabalável e por profundo senso de missão, transformou o que era
-              isolamento e dor em acolhimento, solidariedade e esperança. Sua presença constante
-              entre os doentes, o apoio moral e material que oferecia e sua luta pela inclusão
-              social dos pacientes fizeram dele uma figura inesquecível.
-            </p>
-            <p>
-              A quem o conheceu, deixou o testemunho franciscano de simplicidade, pobreza e amor
-              ao próximo. A quem não o conheceu, deixa esta memória.
-            </p>
-          </div>
-        </div>
       </section>
 
       <section className="border-y border-border/70 bg-secondary/50">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <p className="eyebrow">Momentos</p>
-          <h2 className="mt-2 font-serif text-3xl text-foreground">O começo de tudo</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {destaques.map((m) => (
-              <article key={m.ano} className="rounded-lg border border-border bg-card p-6">
-                <p className="eyebrow">{m.ano}</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">{m.titulo}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.texto}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-10">
-            <Link
-              to="/linha-do-tempo"
-              className="text-sm text-accent underline-offset-4 hover:underline"
-            >
-              Ver a linha do tempo completa →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-4xl px-5 py-20 text-center">
-        <p className="eyebrow">Quem conviveu com ele</p>
-        <blockquote className="mt-6 font-serif text-2xl leading-relaxed text-foreground sm:text-3xl">
-          “{depoimentos[0].texto}”
-        </blockquote>
-        <p className="mt-6 text-sm text-muted-foreground">
-          {depoimentos[0].autor} · {depoimentos[0].papel}
-        </p>
-        <div className="mt-8">
-          <Link
-            to="/depoimentos"
-            className="text-sm text-accent underline-offset-4 hover:underline"
-          >
-            Ler todos os depoimentos →
-          </Link>
+        <div className="mx-auto max-w-3xl px-5 py-20 text-center">
+          <p className="eyebrow">Legado vivo</p>
+          <h2 className="mt-3 font-serif text-3xl text-foreground">Manter o nome vivo</h2>
+          <span className="rule-gold mt-6" />
+          <p className="mt-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Familiares, confrades e amigos se unem para preservar a memória de Frei Rui. Através de
+            relatos, fotos, orações e este espaço, eles querem que sua história de amor aos pobres e
+            de serviço franciscano continue inspirando Rodeio, Piraquara e todos que forem tocados
+            por esse legado.
+          </p>
         </div>
       </section>
     </>
