@@ -5,13 +5,13 @@ import { perfil, depoimentos, linhaDoTempo } from "@/data/frei-rui";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Frei Rui Guido Depiné — Legado e Legado" },
+      { title: "Frei Rui Guido Depiné — Vida e Legado" },
       {
         name: "description",
         content:
           "Legado de Frei Rui Guido Depiné, OFM (1942–2020): franciscano de Rodeio (SC) que dedicou a vida aos pobres e ao Hospital São Roque, em Piraquara (PR).",
       },
-      { property: "og:title", content: "Frei Rui Guido Depiné — Legado e Legado" },
+      { property: "og:title", content: "Frei Rui Guido Depiné — Vida e Legado" },
       {
         property: "og:description",
         content:

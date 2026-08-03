@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Legado dedicado à vida e ao legado de Frei Rui Guido Depiné, OFM (1942–2020).",
+          "Site dedicado à vida e ao legado de Frei Rui Guido Depiné, OFM (1942–2020).",
       },
       { name: "author", content: "Família Depiné" },
       { property: "og:type", content: "website" },
@@ -216,7 +216,7 @@ function Rodape() {
         <div>
           <p className="eyebrow">Memória viva</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Este legado é mantido pela família Depiné e por amigos, para que a história de
+            Este espaço é mantido pela família Depiné e por amigos, para que a história de
             Frei Rui continue inspirando novas gerações.
           </p>
           <p className="mt-4 text-xs text-muted-foreground">Paz e Bem.</p>
