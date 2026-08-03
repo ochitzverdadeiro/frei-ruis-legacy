@@ -12,13 +12,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — Memorial Frei Rui Guido Depiné" },
+      { title: "Contato — Legado Frei Rui Guido Depiné" },
       {
         name: "description",
         content:
-          "Fale com a família Depiné e com os responsáveis pelo memorial de Frei Rui Guido Depiné.",
+          "Fale com a família Depiné e com os responsáveis pelo legado de Frei Rui Guido Depiné.",
       },
-      { property: "og:title", content: "Contato — Memorial Frei Rui Guido Depiné" },
+      { property: "og:title", content: "Contato — Legado Frei Rui Guido Depiné" },
       {
         property: "og:description",
         content: "Um canal aberto para dúvidas, memórias, fotos e documentos.",
@@ -161,7 +161,7 @@ function Contato() {
             <h2 className="mt-3 font-serif text-xl text-foreground">Mensagens</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Use o formulário ao lado. Todas as mensagens chegam diretamente aos responsáveis
-              pelo memorial.
+              pelo legado.
             </p>
           </div>
           <div>
