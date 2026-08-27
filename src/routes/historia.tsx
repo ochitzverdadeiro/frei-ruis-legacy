@@ -68,11 +68,12 @@ function Historia() {
           este menino vai ser padre.
         </p>
         <p>
-          Em 1954, com apenas doze anos, ingressou no seminário da Província Franciscana da
-          Imaculada Conceição do Brasil. O caminho de formação o levou por Rodeio, Rio Negro e
-          Agudos; fez o noviciado em Rodeio, a Filosofia em Curitiba e a Teologia em Petrópolis.
-          Em 18 de julho de 1971, foi ordenado sacerdote na terra natal, diante da família e dos
-          vizinhos que o viram crescer.
+          Em 1954, ainda menino, ingressou no Seminário de Rodeio, da Província Franciscana da
+          Imaculada Conceição do Brasil. A formação o levou ao Seminário Seráfico de Rio Negro (PR)
+          em 1956 e ao Seminário de Agudos (SP) em 1958; fez o noviciado em Rodeio em 1964, o curso
+          de Filosofia em Curitiba em 1965 e o de Teologia em Petrópolis (RJ) em 1968. Em 18 de
+          julho de 1971, foi ordenado sacerdote na terra natal, diante da família e dos vizinhos que
+          o viram crescer.
         </p>
         <blockquote className="not-prose my-8 border-l-2 border-gold pl-6 font-serif text-xl italic leading-relaxed text-foreground">
           “Somos a esperança de alguma coisa que em nós poderá acontecer.”
@@ -81,25 +82,61 @@ function Historia() {
           </span>
         </blockquote>
 
-        <h2 className="font-serif text-2xl text-foreground">A missão entre os pobres</h2>
+        <h2 className="font-serif text-2xl text-foreground">As primeiras missões</h2>
         <p>
-          Nas primeiras missões, em Duque de Caxias e Concórdia, ficou conhecido por uma coisa
-          simples e desconcertante: não guardava nada. Vinhos, roupas, sapatos, presentes — tudo o
-          que recebia acabava nas mãos de quem precisava mais. Não reteve nada para si.
+          Em 6 de dezembro de 1971 seguiu para a Baixada Fluminense, em Duque de Caxias (RJ),
+          Piabetá, onde atuou nas comunidades e favelas do Esqueleto, Rocinha, Beija-Flor, Pinto e
+          Mangueira, entre outras. Trabalhou na pastoral, nas capelas e na ação social, ajudou a
+          construir igrejas e foi líder da juventude franciscana.
         </p>
         <p>
-          Foi em Piraquara, no Paraná, junto ao antigo complexo da Colônia São Roque, que sua vida
-          encontrou a forma definitiva. O lugar havia nascido como espaço de isolamento das
-          pessoas atingidas pela hanseníase — um endereço de exclusão e sofrimento. Frei Rui o
-          transformou em casa.
+          Em 3 de março de 1975 foi para Concórdia (SC), onde ajudou a erguer a igreja local e
+          atendeu todas as capelas da região. Envolveu-se na construção de casas para famílias
+          necessitadas — de tal forma que hoje existe em Concórdia um bairro, o Nova Brasília,
+          nascido basicamente daquela ação. Nessas missões ficou conhecido por uma coisa simples e
+          desconcertante: não guardava nada. Vinhos, roupas, sapatos, presentes — tudo o que
+          recebia acabava nas mãos de quem precisava mais.
+        </p>
+
+        <h2 className="font-serif text-2xl text-foreground">São Roque, em Piraquara</h2>
+        <p>
+          Em 12 de dezembro de 1978, Frei Rui veio ao encontro dos hansenianos da Colônia São
+          Roque, em Piraquara (PR). Foram quase quarenta anos como capelão do Hospital São Roque,
+          atual Hospital de Dermatologia Sanitária do Paraná. O lugar havia nascido como espaço de
+          isolamento das pessoas atingidas pela hanseníase — um endereço de exclusão e sofrimento.
+          Frei Rui o transformou em casa.
         </p>
         <p>
-          Reformou o hospital, ergueu pequenas casas para famílias sem teto, distribuiu cestas
-          básicas, remédios, roupas e material de construção, arranjou trabalho para muitos e
-          brigou pela inclusão social dos pacientes. Recebia governadores e presidiários com a
-          mesma atenção: para ele, todos eram gente. Recebeu o título de Cidadão Paranaense, mas
-          fugia dos palcos e das honrarias.
+          Quando o hospital foi reestruturado e os internos puderam morar em suas próprias casas,
+          muitos não tinham para onde ir: haviam perdido contato com as famílias e ainda dependiam
+          do tratamento. Frei Rui envolveu benfeitores na compra de terrenos próximos e na
+          construção de casas para os egressos. Entre 1980 e o fim dos anos 1990, com a grande onda
+          migratória para Piraquara, ampliou ainda mais esse trabalho: junto com benfeitores,
+          construiu mais de mil casas, especialmente nos bairros de Guarituba, Vila Macedo, Santa
+          Mônica, Jardim Primavera, Bela Vista e São Cristóvão. No Guarituba, de solo encharcado,
+          levou centenas de caminhões de terra para tornar a vida possível ali. Prestou também
+          relevante assistência aos indígenas guaranis da Aldeia Araçaí, nas montanhas de Piraquara.
         </p>
+        <p>
+          A promoção humana acontecia de todas as formas: comida, remédios, móveis, roupas, material
+          escolar e festas de Natal, Páscoa e Dia das Crianças com farta distribuição de doces e
+          brinquedos. Esse trabalho imenso só foi possível pela parceria constante e fraterna das
+          Irmãs da Congregação das Irmãs Franciscanas de São José, presentes no São Roque desde 20
+          de outubro de 1926 — e que até hoje seguem distribuindo cestas básicas às famílias
+          cadastradas.
+        </p>
+        <p>
+          Com sua capacidade de aglutinar amigos, ajudou a fundar instituições beneficentes e
+          entidades filantrópicas, entre elas a ABSR — Associação Beneficente São Roque e a Fundação
+          Pró-Hansen, além de contar com a Associação e Oficinas de Caridade Santa Rita de Cássia.
+          Esteve presente em hospitais, com destaque para o Hospital San Julian, e teve forte
+          atuação junto à Colônia Penal: alguns presos trabalhavam no São Roque, onde ele
+          evangelizava e ensinava ofícios como marcenaria e jardinagem. Atendia penitenciárias e
+          delegacias, fazia sepultamentos e visitava as casas de todos — dos mais abastados aos mais
+          necessitados —, sempre levando o pão, o remédio, o agasalho e, principalmente, sua
+          presença franciscana e amiga.
+        </p>
+
 
 
         <h2 className="font-serif text-2xl text-foreground">O pomar, os pássaros e a música</h2>
