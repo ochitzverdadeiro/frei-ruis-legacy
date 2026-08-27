@@ -40,10 +40,13 @@ function Historia() {
         </p>
         <p>
           Ali, em 23 de dezembro de 1939, José Depiné — agricultor, alfaiate e Juiz de Paz — casou-se
-          com Lydia Ida Maria Benkendorf, de ascendência alemã. Da união nasceram doze filhos.
-          Rui Guido, nascido em 8 de outubro de 1942, cresceu entre o milho, o arroz, a horta e as
-          vacas, aprendendo cedo que o trabalho e a oração caminham juntos.
+          com Lydia Ida Maria Benkendorf, de ascendência alemã. Formaram uma família muito
+          religiosa: os pais pertenciam à Ordem Franciscana Secular e ao Apostolado da Oração, e
+          eram presença certa nas celebrações. Rui Guido, nascido em 8 de outubro de 1942, foi o
+          segundo de onze irmãos — quatro homens e sete mulheres — e cresceu entre o milho, o
+          arroz, a horta e as vacas, aprendendo cedo que o trabalho e a oração caminham juntos.
         </p>
+
 
         <figure className="not-prose my-10">
           <img
