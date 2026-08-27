@@ -20,6 +20,7 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as AcoesRouteImport } from './routes/acoes'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EscritosIndexRouteImport } from './routes/escritos.index'
+import { Route as EscritosSlugRouteImport } from './routes/escritos.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -76,6 +77,11 @@ const EscritosIndexRoute = EscritosIndexRouteImport.update({
   path: '/escritos/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EscritosSlugRoute = EscritosSlugRouteImport.update({
+  id: '/escritos/$slug',
+  path: '/escritos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/linha-do-tempo': typeof LinhaDoTempoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/escritos/$slug': typeof EscritosSlugRoute
   '/escritos/': typeof EscritosIndexRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/linha-do-tempo': typeof LinhaDoTempoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/escritos/$slug': typeof EscritosSlugRoute
   '/escritos': typeof EscritosIndexRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/linha-do-tempo': typeof LinhaDoTempoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/escritos/$slug': typeof EscritosSlugRoute
   '/escritos/': typeof EscritosIndexRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/linha-do-tempo'
     | '/quem-somos'
     | '/sitemap.xml'
+    | '/escritos/$slug'
     | '/escritos/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/linha-do-tempo'
     | '/quem-somos'
     | '/sitemap.xml'
+    | '/escritos/$slug'
     | '/escritos'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/linha-do-tempo'
     | '/quem-somos'
     | '/sitemap.xml'
+    | '/escritos/$slug'
     | '/escritos/'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   LinhaDoTempoRoute: typeof LinhaDoTempoRoute
   QuemSomosRoute: typeof QuemSomosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  EscritosSlugRoute: typeof EscritosSlugRoute
   EscritosIndexRoute: typeof EscritosIndexRoute
 }
 
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EscritosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/escritos/$slug': {
+      id: '/escritos/$slug'
+      path: '/escritos/$slug'
+      fullPath: '/escritos/$slug'
+      preLoaderRoute: typeof EscritosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   LinhaDoTempoRoute: LinhaDoTempoRoute,
   QuemSomosRoute: QuemSomosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  EscritosSlugRoute: EscritosSlugRoute,
   EscritosIndexRoute: EscritosIndexRoute,
 }
 export const routeTree = rootRouteImport

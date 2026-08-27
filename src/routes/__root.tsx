@@ -16,13 +16,17 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 const navegacao = [
   { to: "/", rotulo: "Início" },
+  { to: "/quem-somos", rotulo: "Quem Somos" },
   { to: "/historia", rotulo: "História" },
   { to: "/linha-do-tempo", rotulo: "Linha do Tempo" },
+  { to: "/escritos", rotulo: "Escritos" },
+  { to: "/acoes", rotulo: "Ações" },
   { to: "/galeria", rotulo: "Galeria" },
   { to: "/depoimentos", rotulo: "Depoimentos" },
   { to: "/homenagens", rotulo: "Homenagens" },
   { to: "/contato", rotulo: "Contato" },
 ] as const;
+
 
 function NotFoundComponent() {
   return (
