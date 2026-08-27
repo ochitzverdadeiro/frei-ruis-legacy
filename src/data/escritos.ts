@@ -25,8 +25,7 @@ export const escritos: Escrito[] = [
       "Juntos percorremos os mais diversos caminhos da vida: bosques, cidades, vales, montanhas, rios e mares, catedrais e cemitérios e permanecemos juntos. Meu talismã. De bolso em bolso, passa por paletós, camisas, calças, pijamas, casacos e volta pra mesma mão. Vezes sem fim desaparece temporariamente entre livros, prateleiras, mesas, automóveis, armários, aspiradores, lavanderias, campos de esportes, lavouras, hortas, etc, mas sempre volta.",
       "Certa feita ficou na cabeceira de um mourão por três meses. Nem a chuva, nem o vento, nem a tempestade o consumiu. E ainda sob a pedra às margens do rio da várzea foi resgatado muito tempo depois. Meu talismã é imperdível, insubstituível, inseparável. Faz parte de mim. É até certo ponto propriedade, herança, inventário, espólio e conquista. Foi preciso deixar marcas de sangue na casca áspera de um pinheiro e ralar braços, mãos e pés para merecê-lo. Meu talismã tem o mistério da fonte, da lareira, da semente, das estrelas, do infinito.",
       "Tem verso e reverso. De um lado duas flores intercaladas por uma inscrição “Assisi”. Do outro a imagem do Poverello, uma árvore e um bando de pássaros. Todos tem alma conforme sua natureza e parecem dizer que é preciso ter um segredo secreto muito firme para ser feliz. Assim fala o meu pequeno talismã.",
-      "N.B.: Há três dias depois de ter escrito estas palavras, perdi talvez para nunca mais encontrá-lo.",
-      "Obs.: a medalha de São Francisco que colocamos na imagem não é o talismã do Frei Rui. É só ilustrativo."
+      "N.B.: Há três dias depois de ter escrito estas palavras, perdi talvez para nunca mais encontrá-lo."
     ]
   },
   {
@@ -135,8 +134,7 @@ export const escritos: Escrito[] = [
       "Era o nosso amigo. Era o nosso exemplo.",
       "Nenhum agradecimento vai fazer com que nós consigamos realmente demonstrar nossa gratidão.",
       "Mas, mesmo assim, é o pouco que podemos fazer: obrigada, Frei Rui!",
-      "Nossa eterna gratidão! Nossa eterna saudade!",
-      "(Postar o Vídeo do Frei lendo a Homilia Buscai o Senhor)"
+      "Nossa eterna gratidão! Nossa eterna saudade!"
     ]
   },
   {
