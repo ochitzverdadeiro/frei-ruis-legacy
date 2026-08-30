@@ -17,13 +17,27 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "monthly", priority: "1.0" },
+          { path: "/quem-somos", changefreq: "monthly", priority: "0.8" },
           { path: "/historia", changefreq: "monthly", priority: "0.9" },
           { path: "/linha-do-tempo", changefreq: "monthly", priority: "0.8" },
+          { path: "/escritos", changefreq: "weekly", priority: "0.8" },
+          { path: "/acoes", changefreq: "monthly", priority: "0.8" },
           { path: "/galeria", changefreq: "monthly", priority: "0.8" },
           { path: "/depoimentos", changefreq: "monthly", priority: "0.8" },
           { path: "/homenagens", changefreq: "weekly", priority: "0.7" },
           { path: "/contato", changefreq: "yearly", priority: "0.5" },
+          ...escritos.map((e) => ({
+            path: `/escritos/${e.slug}`,
+            changefreq: "yearly" as const,
+            priority: "0.6",
+          })),
+          ...depoimentosLongos.map((d) => ({
+            path: `/depoimentos/${d.slug}`,
+            changefreq: "yearly" as const,
+            priority: "0.6",
+          })),
         ];
+
 
         const urls = entries.map((e) =>
           [
