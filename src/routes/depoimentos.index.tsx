@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { depoimentos } from "@/data/frei-rui";
 
-export const Route = createFileRoute("/depoimentos")({
+export const Route = createFileRoute("/depoimentos/")({
   head: () => ({
     meta: [
       { title: "Depoimentos — Frei Rui Guido Depiné" },

@@ -15,11 +15,11 @@ import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
 import { Route as HomenagensRouteImport } from './routes/homenagens'
 import { Route as HistoriaRouteImport } from './routes/historia'
 import { Route as GaleriaRouteImport } from './routes/galeria'
-import { Route as DepoimentosRouteImport } from './routes/depoimentos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as AcoesRouteImport } from './routes/acoes'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EscritosIndexRouteImport } from './routes/escritos.index'
+import { Route as DepoimentosIndexRouteImport } from './routes/depoimentos.index'
 import { Route as EscritosSlugRouteImport } from './routes/escritos.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -52,11 +52,6 @@ const GaleriaRoute = GaleriaRouteImport.update({
   path: '/galeria',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DepoimentosRoute = DepoimentosRouteImport.update({
-  id: '/depoimentos',
-  path: '/depoimentos',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -77,6 +72,11 @@ const EscritosIndexRoute = EscritosIndexRouteImport.update({
   path: '/escritos/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DepoimentosIndexRoute = DepoimentosIndexRouteImport.update({
+  id: '/depoimentos/',
+  path: '/depoimentos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EscritosSlugRoute = EscritosSlugRouteImport.update({
   id: '/escritos/$slug',
   path: '/escritos/$slug',
@@ -87,7 +87,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/acoes': typeof AcoesRoute
   '/contato': typeof ContatoRoute
-  '/depoimentos': typeof DepoimentosRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
@@ -95,13 +94,13 @@ export interface FileRoutesByFullPath {
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/escritos/$slug': typeof EscritosSlugRoute
+  '/depoimentos/': typeof DepoimentosIndexRoute
   '/escritos/': typeof EscritosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/acoes': typeof AcoesRoute
   '/contato': typeof ContatoRoute
-  '/depoimentos': typeof DepoimentosRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
@@ -109,6 +108,7 @@ export interface FileRoutesByTo {
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/escritos/$slug': typeof EscritosSlugRoute
+  '/depoimentos': typeof DepoimentosIndexRoute
   '/escritos': typeof EscritosIndexRoute
 }
 export interface FileRoutesById {
@@ -116,7 +116,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/acoes': typeof AcoesRoute
   '/contato': typeof ContatoRoute
-  '/depoimentos': typeof DepoimentosRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
@@ -124,6 +123,7 @@ export interface FileRoutesById {
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/escritos/$slug': typeof EscritosSlugRoute
+  '/depoimentos/': typeof DepoimentosIndexRoute
   '/escritos/': typeof EscritosIndexRoute
 }
 export interface FileRouteTypes {
@@ -132,7 +132,6 @@ export interface FileRouteTypes {
     | '/'
     | '/acoes'
     | '/contato'
-    | '/depoimentos'
     | '/galeria'
     | '/historia'
     | '/homenagens'
@@ -140,13 +139,13 @@ export interface FileRouteTypes {
     | '/quem-somos'
     | '/sitemap.xml'
     | '/escritos/$slug'
+    | '/depoimentos/'
     | '/escritos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/acoes'
     | '/contato'
-    | '/depoimentos'
     | '/galeria'
     | '/historia'
     | '/homenagens'
@@ -154,13 +153,13 @@ export interface FileRouteTypes {
     | '/quem-somos'
     | '/sitemap.xml'
     | '/escritos/$slug'
+    | '/depoimentos'
     | '/escritos'
   id:
     | '__root__'
     | '/'
     | '/acoes'
     | '/contato'
-    | '/depoimentos'
     | '/galeria'
     | '/historia'
     | '/homenagens'
@@ -168,6 +167,7 @@ export interface FileRouteTypes {
     | '/quem-somos'
     | '/sitemap.xml'
     | '/escritos/$slug'
+    | '/depoimentos/'
     | '/escritos/'
   fileRoutesById: FileRoutesById
 }
@@ -175,7 +175,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AcoesRoute: typeof AcoesRoute
   ContatoRoute: typeof ContatoRoute
-  DepoimentosRoute: typeof DepoimentosRoute
   GaleriaRoute: typeof GaleriaRoute
   HistoriaRoute: typeof HistoriaRoute
   HomenagensRoute: typeof HomenagensRoute
@@ -183,6 +182,7 @@ export interface RootRouteChildren {
   QuemSomosRoute: typeof QuemSomosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   EscritosSlugRoute: typeof EscritosSlugRoute
+  DepoimentosIndexRoute: typeof DepoimentosIndexRoute
   EscritosIndexRoute: typeof EscritosIndexRoute
 }
 
@@ -230,13 +230,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GaleriaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/depoimentos': {
-      id: '/depoimentos'
-      path: '/depoimentos'
-      fullPath: '/depoimentos'
-      preLoaderRoute: typeof DepoimentosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contato': {
       id: '/contato'
       path: '/contato'
@@ -265,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EscritosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/depoimentos/': {
+      id: '/depoimentos/'
+      path: '/depoimentos'
+      fullPath: '/depoimentos/'
+      preLoaderRoute: typeof DepoimentosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/escritos/$slug': {
       id: '/escritos/$slug'
       path: '/escritos/$slug'
@@ -279,7 +279,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AcoesRoute: AcoesRoute,
   ContatoRoute: ContatoRoute,
-  DepoimentosRoute: DepoimentosRoute,
   GaleriaRoute: GaleriaRoute,
   HistoriaRoute: HistoriaRoute,
   HomenagensRoute: HomenagensRoute,
@@ -287,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   QuemSomosRoute: QuemSomosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   EscritosSlugRoute: EscritosSlugRoute,
+  DepoimentosIndexRoute: DepoimentosIndexRoute,
   EscritosIndexRoute: EscritosIndexRoute,
 }
 export const routeTree = rootRouteImport
