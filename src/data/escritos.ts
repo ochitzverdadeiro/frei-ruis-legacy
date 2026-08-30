@@ -460,7 +460,8 @@ export const escritos: Escrito[] = [
       "- ressuscitado mostrando que não é aquele que lava os pés que não é forte.",
       "A Igreja celebra ao longo da Quaresma e da Semana Santa tudo o que aconteceu a Jesus de Nazaré no final de Sua vida."
     ]
-  }
+  },
+
   {
     slug: "8a-da-pascoa-domingo-da-misericordia",
     titulo: "8a da Páscoa - Domingo da Misericórdia",
