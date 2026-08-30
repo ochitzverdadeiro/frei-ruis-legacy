@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { depoimentos } from "@/data/frei-rui";
+import { depoimentosLongos } from "@/data/depoimentos-longos";
 
-export const Route = createFileRoute("/depoimentos")({
+export const Route = createFileRoute("/depoimentos/")({
   head: () => ({
     meta: [
       { title: "Depoimentos — Frei Rui Guido Depiné" },
@@ -29,11 +30,33 @@ function Depoimentos() {
       </h1>
       <span className="rule-gold mt-6" />
       <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        Irmãos, primos, confrades e amigos guardam pedaços da mesma história. Reunimos aqui
-        algumas dessas lembranças.
+        Irmãos, primos, confrades, médicos, pacientes e amigos guardam pedaços da mesma
+        história. Reunimos aqui essas lembranças.
       </p>
 
-      <div className="mt-12 columns-1 gap-6 md:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid">
+      <h2 className="mt-14 font-serif text-2xl text-foreground">Relatos completos</h2>
+      <div className="mt-6 grid gap-5 sm:grid-cols-2">
+        {depoimentosLongos.map((d) => (
+          <Link
+            key={d.slug}
+            to="/depoimentos/$slug"
+            params={{ slug: d.slug }}
+            className="surface-parchment group rounded-lg border border-border p-6 transition-colors hover:border-accent"
+          >
+            <h3 className="font-serif text-xl text-foreground group-hover:text-accent">
+              {d.autor}
+            </h3>
+            {d.data ? <p className="mt-1 text-xs text-muted-foreground">{d.data}</p> : null}
+            <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-muted-foreground">
+              {d.resumo}
+            </p>
+            <span className="mt-4 inline-block text-sm text-accent">Ler o depoimento →</span>
+          </Link>
+        ))}
+      </div>
+
+      <h2 className="mt-16 font-serif text-2xl text-foreground">Em poucas palavras</h2>
+      <div className="mt-6 columns-1 gap-6 md:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid">
         {depoimentos.map((d) => (
           <blockquote
             key={d.autor + d.papel}
