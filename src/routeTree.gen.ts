@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
+import { Route as HomiliasRouteImport } from './routes/homilias'
 import { Route as HomenagensRouteImport } from './routes/homenagens'
 import { Route as HistoriaRouteImport } from './routes/historia'
 import { Route as GaleriaRouteImport } from './routes/galeria'
@@ -36,6 +37,11 @@ const QuemSomosRoute = QuemSomosRouteImport.update({
 const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
   id: '/linha-do-tempo',
   path: '/linha-do-tempo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomiliasRoute = HomiliasRouteImport.update({
+  id: '/homilias',
+  path: '/homilias',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomenagensRoute = HomenagensRouteImport.update({
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
+  '/homilias': typeof HomiliasRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
+  '/homilias': typeof HomiliasRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
+  '/homilias': typeof HomiliasRoute
   '/linha-do-tempo': typeof LinhaDoTempoRoute
   '/quem-somos': typeof QuemSomosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/historia'
     | '/homenagens'
+    | '/homilias'
     | '/linha-do-tempo'
     | '/quem-somos'
     | '/sitemap.xml'
@@ -159,6 +169,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/historia'
     | '/homenagens'
+    | '/homilias'
     | '/linha-do-tempo'
     | '/quem-somos'
     | '/sitemap.xml'
@@ -174,6 +185,7 @@ export interface FileRouteTypes {
     | '/galeria'
     | '/historia'
     | '/homenagens'
+    | '/homilias'
     | '/linha-do-tempo'
     | '/quem-somos'
     | '/sitemap.xml'
@@ -190,6 +202,7 @@ export interface RootRouteChildren {
   GaleriaRoute: typeof GaleriaRoute
   HistoriaRoute: typeof HistoriaRoute
   HomenagensRoute: typeof HomenagensRoute
+  HomiliasRoute: typeof HomiliasRoute
   LinhaDoTempoRoute: typeof LinhaDoTempoRoute
   QuemSomosRoute: typeof QuemSomosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -220,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/linha-do-tempo'
       fullPath: '/linha-do-tempo'
       preLoaderRoute: typeof LinhaDoTempoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homilias': {
+      id: '/homilias'
+      path: '/homilias'
+      fullPath: '/homilias'
+      preLoaderRoute: typeof HomiliasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/homenagens': {
@@ -302,6 +322,7 @@ const rootRouteChildren: RootRouteChildren = {
   GaleriaRoute: GaleriaRoute,
   HistoriaRoute: HistoriaRoute,
   HomenagensRoute: HomenagensRoute,
+  HomiliasRoute: HomiliasRoute,
   LinhaDoTempoRoute: LinhaDoTempoRoute,
   QuemSomosRoute: QuemSomosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
