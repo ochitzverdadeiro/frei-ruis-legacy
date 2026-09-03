@@ -2,6 +2,10 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { escritos } from "@/data/escritos";
 
 export const Route = createFileRoute("/escritos/$slug")({
+  // Conteúdo importado dos arquivos do Drive: oculto do público por enquanto.
+  beforeLoad: () => {
+    throw notFound();
+  },
   loader: ({ params }) => {
     const escrito = escritos.find((e) => e.slug === params.slug);
     if (!escrito) throw notFound();
