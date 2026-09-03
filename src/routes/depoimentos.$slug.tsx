@@ -2,6 +2,10 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { depoimentosLongos } from "@/data/depoimentos-longos";
 
 export const Route = createFileRoute("/depoimentos/$slug")({
+  // Conteúdo importado dos arquivos do Drive: oculto do público por enquanto.
+  beforeLoad: () => {
+    throw notFound();
+  },
   loader: ({ params }) => {
     const dep = depoimentosLongos.find((d) => d.slug === params.slug);
     if (!dep) throw notFound();

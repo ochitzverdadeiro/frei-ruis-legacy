@@ -1,7 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { escritos } from "@/data/escritos";
 
+// Conteúdo importado dos arquivos do Drive: oculto do público por enquanto.
 export const Route = createFileRoute("/homilias")({
+  beforeLoad: () => {
+    throw notFound();
+  },
   head: () => ({
     meta: [
       { title: "Homilias — Frei Rui Guido Depiné" },

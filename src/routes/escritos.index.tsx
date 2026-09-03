@@ -1,8 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { escritos } from "@/data/escritos";
 
+// Conteúdo importado dos arquivos do Drive: oculto do público por enquanto.
 export const Route = createFileRoute("/escritos/")({
+  beforeLoad: () => {
+    throw notFound();
+  },
   head: () => ({
     meta: [
       { title: "Escritos e Homilias — Frei Rui Guido Depiné" },
