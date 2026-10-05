@@ -9,59 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as QuemSomosRouteImport } from './routes/quem-somos'
-import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
-import { Route as HomiliasRouteImport } from './routes/homilias'
-import { Route as HomenagensRouteImport } from './routes/homenagens'
-import { Route as HistoriaRouteImport } from './routes/historia'
-import { Route as GaleriaRouteImport } from './routes/galeria'
-import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as AcoesRouteImport } from './routes/acoes'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as EscritosIndexRouteImport } from './routes/escritos.index'
+import { Route as AcoesRouteImport } from './routes/acoes'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as HistoriaRouteImport } from './routes/historia'
+import { Route as HomenagensRouteImport } from './routes/homenagens'
+import { Route as HomiliasRouteImport } from './routes/homilias'
+import { Route as LinhaDoTempoRouteImport } from './routes/linha-do-tempo'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as DepoimentosIndexRouteImport } from './routes/depoimentos.index'
-import { Route as EscritosSlugRouteImport } from './routes/escritos.$slug'
 import { Route as DepoimentosSlugRouteImport } from './routes/depoimentos.$slug'
+import { Route as EscritosIndexRouteImport } from './routes/escritos.index'
+import { Route as EscritosSlugRouteImport } from './routes/escritos.$slug'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QuemSomosRoute = QuemSomosRouteImport.update({
-  id: '/quem-somos',
-  path: '/quem-somos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
-  id: '/linha-do-tempo',
-  path: '/linha-do-tempo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HomiliasRoute = HomiliasRouteImport.update({
-  id: '/homilias',
-  path: '/homilias',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HomenagensRoute = HomenagensRouteImport.update({
-  id: '/homenagens',
-  path: '/homenagens',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HistoriaRoute = HistoriaRouteImport.update({
-  id: '/historia',
-  path: '/historia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GaleriaRoute = GaleriaRouteImport.update({
-  id: '/galeria',
-  path: '/galeria',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContatoRoute = ContatoRouteImport.update({
-  id: '/contato',
-  path: '/contato',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcoesRoute = AcoesRouteImport.update({
@@ -69,14 +34,44 @@ const AcoesRoute = AcoesRouteImport.update({
   path: '/acoes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EscritosIndexRoute = EscritosIndexRouteImport.update({
-  id: '/escritos/',
-  path: '/escritos/',
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoriaRoute = HistoriaRouteImport.update({
+  id: '/historia',
+  path: '/historia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomenagensRoute = HomenagensRouteImport.update({
+  id: '/homenagens',
+  path: '/homenagens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomiliasRoute = HomiliasRouteImport.update({
+  id: '/homilias',
+  path: '/homilias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LinhaDoTempoRoute = LinhaDoTempoRouteImport.update({
+  id: '/linha-do-tempo',
+  path: '/linha-do-tempo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DepoimentosIndexRoute = DepoimentosIndexRouteImport.update({
@@ -84,14 +79,19 @@ const DepoimentosIndexRoute = DepoimentosIndexRouteImport.update({
   path: '/depoimentos/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EscritosSlugRoute = EscritosSlugRouteImport.update({
-  id: '/escritos/$slug',
-  path: '/escritos/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DepoimentosSlugRoute = DepoimentosSlugRouteImport.update({
   id: '/depoimentos/$slug',
   path: '/depoimentos/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EscritosIndexRoute = EscritosIndexRouteImport.update({
+  id: '/escritos/',
+  path: '/escritos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EscritosSlugRoute = EscritosSlugRouteImport.update({
+  id: '/escritos/$slug',
+  path: '/escritos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -214,60 +214,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quem-somos': {
-      id: '/quem-somos'
-      path: '/quem-somos'
-      fullPath: '/quem-somos'
-      preLoaderRoute: typeof QuemSomosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/linha-do-tempo': {
-      id: '/linha-do-tempo'
-      path: '/linha-do-tempo'
-      fullPath: '/linha-do-tempo'
-      preLoaderRoute: typeof LinhaDoTempoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/homilias': {
-      id: '/homilias'
-      path: '/homilias'
-      fullPath: '/homilias'
-      preLoaderRoute: typeof HomiliasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/homenagens': {
-      id: '/homenagens'
-      path: '/homenagens'
-      fullPath: '/homenagens'
-      preLoaderRoute: typeof HomenagensRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/historia': {
-      id: '/historia'
-      path: '/historia'
-      fullPath: '/historia'
-      preLoaderRoute: typeof HistoriaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/galeria': {
-      id: '/galeria'
-      path: '/galeria'
-      fullPath: '/galeria'
-      preLoaderRoute: typeof GaleriaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contato': {
-      id: '/contato'
-      path: '/contato'
-      fullPath: '/contato'
-      preLoaderRoute: typeof ContatoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/acoes': {
@@ -277,18 +228,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcoesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/escritos/': {
-      id: '/escritos/'
-      path: '/escritos'
-      fullPath: '/escritos/'
-      preLoaderRoute: typeof EscritosIndexRouteImport
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historia': {
+      id: '/historia'
+      path: '/historia'
+      fullPath: '/historia'
+      preLoaderRoute: typeof HistoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homenagens': {
+      id: '/homenagens'
+      path: '/homenagens'
+      fullPath: '/homenagens'
+      preLoaderRoute: typeof HomenagensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homilias': {
+      id: '/homilias'
+      path: '/homilias'
+      fullPath: '/homilias'
+      preLoaderRoute: typeof HomiliasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/linha-do-tempo': {
+      id: '/linha-do-tempo'
+      path: '/linha-do-tempo'
+      fullPath: '/linha-do-tempo'
+      preLoaderRoute: typeof LinhaDoTempoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/depoimentos/': {
@@ -298,18 +291,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DepoimentosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/escritos/$slug': {
-      id: '/escritos/$slug'
-      path: '/escritos/$slug'
-      fullPath: '/escritos/$slug'
-      preLoaderRoute: typeof EscritosSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/depoimentos/$slug': {
       id: '/depoimentos/$slug'
       path: '/depoimentos/$slug'
       fullPath: '/depoimentos/$slug'
       preLoaderRoute: typeof DepoimentosSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escritos/': {
+      id: '/escritos/'
+      path: '/escritos'
+      fullPath: '/escritos/'
+      preLoaderRoute: typeof EscritosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escritos/$slug': {
+      id: '/escritos/$slug'
+      path: '/escritos/$slug'
+      fullPath: '/escritos/$slug'
+      preLoaderRoute: typeof EscritosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
