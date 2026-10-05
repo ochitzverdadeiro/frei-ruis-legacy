@@ -19,6 +19,8 @@ const navegacao = [
   { to: "/quem-somos", rotulo: "Quem Somos" },
   { to: "/historia", rotulo: "História" },
   { to: "/linha-do-tempo", rotulo: "Linha do Tempo" },
+  { to: "/escritos", rotulo: "Escritos" },
+  { to: "/homilias", rotulo: "Homilias" },
   { to: "/acoes", rotulo: "Ações" },
   { to: "/galeria", rotulo: "Galeria" },
   { to: "/depoimentos", rotulo: "Depoimentos" },
