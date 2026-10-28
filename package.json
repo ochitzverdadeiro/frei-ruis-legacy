@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:hostinger": "vite build --config vite.hostinger.config.ts",
+    "start": "node .output/server/index.mjs",
+    "test:images": "node --test tooling/portable-images.test.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
