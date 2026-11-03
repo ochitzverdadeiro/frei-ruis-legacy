@@ -12,6 +12,8 @@ export const Route = createFileRoute("/escritos/$slug")({
     const desc = loaderData?.paragrafos[1]?.slice(0, 150) ?? "Texto de Frei Rui Guido Depiné.";
     return {
       meta: [
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { title: titulo },
         { name: "description", content: desc },
         { property: "og:title", content: titulo },

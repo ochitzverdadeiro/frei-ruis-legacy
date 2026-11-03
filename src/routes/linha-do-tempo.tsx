@@ -4,6 +4,8 @@ import { linhaDoTempo } from "@/data/frei-rui";
 export const Route = createFileRoute("/linha-do-tempo")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Linha do Tempo — Frei Rui Guido Depiné" },
       {
         name: "description",

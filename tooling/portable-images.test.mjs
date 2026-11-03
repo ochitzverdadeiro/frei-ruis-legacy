@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { downloadOriginal, portablePointer, readImagePointers, portableImages } from "./portable-images.mjs";
 
 test("all eight original images retain their filenames on the deployment origin", async () => {
-  const entries = await readImagePointers(process.cwd());
+  const entries = (await readImagePointers(process.cwd())).filter(({ pointer }) => !pointer.original_filename.startsWith("acervo-"));
   assert.equal(entries.length, 8);
   assert.deepEqual(entries.map(({ pointer }) => portablePointer(pointer).url).sort(), [
     "/images/eremiterio.jpg", "/images/familia-antiga.jpg", "/images/frei-rui-capa.jpg",

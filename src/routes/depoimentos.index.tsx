@@ -5,6 +5,8 @@ import { depoimentosLongos } from "@/data/depoimentos-longos";
 export const Route = createFileRoute("/depoimentos/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Depoimentos — Frei Rui Guido Depiné" },
       {
         name: "description",

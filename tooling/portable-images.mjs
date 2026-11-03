@@ -5,7 +5,7 @@ export const originalAssetOrigin = "https://frei-ruis-legacy.lovable.app";
 
 export async function readImagePointers(root) {
   const directory = resolve(root, "src/assets");
-  const files = (await readdir(directory)).filter((name) => name.endsWith(".jpg.asset.json"));
+  const files = (await readdir(directory)).filter((name) => /\.(jpg|png)\.asset\.json$/.test(name));
   return Promise.all(files.map(async (name) => ({
     path: resolve(directory, name),
     pointer: JSON.parse(await readFile(resolve(directory, name), "utf8")),
@@ -13,7 +13,7 @@ export async function readImagePointers(root) {
 }
 
 export function portablePointer(pointer) {
-  if (!/^[a-z0-9-]+\.jpg$/.test(pointer.original_filename)) {
+  if (!/^[a-z0-9-]+\.(jpg|png)$/.test(pointer.original_filename)) {
     throw new Error(`Unsafe image filename: ${pointer.original_filename}`);
   }
   return { ...pointer, url: `/images/${pointer.original_filename}` };
@@ -27,7 +27,10 @@ export async function downloadOriginal(pointer, fetcher = fetch) {
   const response = await fetcher(source, { signal: AbortSignal.timeout(60000) });
   if (!response.ok) throw new Error(`Original unavailable: ${pointer.original_filename} (HTTP ${response.status})`);
   const bytes = new Uint8Array(await response.arrayBuffer());
-  if (bytes.length !== pointer.size || bytes[0] !== 0xff || bytes[1] !== 0xd8 || bytes[2] !== 0xff) {
+  const validSignature = pointer.original_filename.endsWith(".png")
+    ? bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47
+    : bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff;
+  if (bytes.length !== pointer.size || !validSignature) {
     throw new Error(`Invalid or changed original: ${pointer.original_filename}`);
   }
   return bytes;
@@ -52,9 +55,11 @@ export function portableImages() {
     },
     async generateBundle() {
       if (!building || this.environment?.name !== "client") return;
-      for (const { pointer } of pointers) {
-        const source = await downloadOriginal(pointer);
-        this.emitFile({ type: "asset", fileName: portablePointer(pointer).url.slice(1), source });
+      for (let start = 0; start < pointers.length; start += 8) {
+        await Promise.all(pointers.slice(start, start + 8).map(async ({ pointer }) => {
+          const source = await downloadOriginal(pointer);
+          this.emitFile({ type: "asset", fileName: portablePointer(pointer).url.slice(1), source });
+        }));
       }
     },
   };

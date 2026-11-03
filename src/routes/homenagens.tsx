@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/homenagens")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Deixe sua Homenagem — Frei Rui Guido Depiné" },
       {
         name: "description",
