@@ -6,3 +6,4 @@
 - [ ] Empacotar os originais no build e configurar publicação Node.js
 - [ ] Validar imagens sem o serviço de assets do Lovable
 - [ ] Republicar e verificar o domínio oficial (depende do acesso à Hostinger)
+- [ ] Importar as imagens da nova pasta do Drive e adicioná-las à galeria
