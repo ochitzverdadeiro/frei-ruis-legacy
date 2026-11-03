@@ -3,6 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/acoes")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Ações de Ajuda ao Próximo — Legado Frei Rui" },
       {
         name: "description",

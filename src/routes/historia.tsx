@@ -5,6 +5,8 @@ import eremiterio from "@/assets/eremiterio.jpg.asset.json";
 export const Route = createFileRoute("/historia")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "História e Legado — Frei Rui Guido Depiné" },
       {
         name: "description",

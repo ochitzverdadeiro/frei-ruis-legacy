@@ -14,6 +14,8 @@ export const Route = createFileRoute("/depoimentos/$slug")({
     const desc = loaderData?.resumo ?? "Depoimento sobre Frei Rui Guido Depiné.";
     return {
       meta: [
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { title: titulo },
         { name: "description", content: desc },
         { property: "og:title", content: titulo },

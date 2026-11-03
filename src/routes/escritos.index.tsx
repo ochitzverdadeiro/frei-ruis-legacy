@@ -5,6 +5,8 @@ import { escritos } from "@/data/escritos";
 export const Route = createFileRoute("/escritos/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Escritos e Homilias — Frei Rui Guido Depiné" },
       {
         name: "description",
