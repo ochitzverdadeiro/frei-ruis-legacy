@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AcoesRouteImport } from './routes/acoes'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as EbookRouteImport } from './routes/ebook'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as HistoriaRouteImport } from './routes/historia'
 import { Route as HomenagensRouteImport } from './routes/homenagens'
@@ -37,6 +38,11 @@ const AcoesRoute = AcoesRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EbookRoute = EbookRouteImport.update({
+  id: '/ebook',
+  path: '/ebook',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GaleriaRoute = GaleriaRouteImport.update({
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/acoes': typeof AcoesRoute
   '/contato': typeof ContatoRoute
+  '/ebook': typeof EbookRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/acoes': typeof AcoesRoute
   '/contato': typeof ContatoRoute
+  '/ebook': typeof EbookRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/acoes': typeof AcoesRoute
   '/contato': typeof ContatoRoute
+  '/ebook': typeof EbookRoute
   '/galeria': typeof GaleriaRoute
   '/historia': typeof HistoriaRoute
   '/homenagens': typeof HomenagensRoute
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/acoes'
     | '/contato'
+    | '/ebook'
     | '/galeria'
     | '/historia'
     | '/homenagens'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/'
     | '/acoes'
     | '/contato'
+    | '/ebook'
     | '/galeria'
     | '/historia'
     | '/homenagens'
@@ -182,6 +193,7 @@ export interface FileRouteTypes {
     | '/'
     | '/acoes'
     | '/contato'
+    | '/ebook'
     | '/galeria'
     | '/historia'
     | '/homenagens'
@@ -199,6 +211,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AcoesRoute: typeof AcoesRoute
   ContatoRoute: typeof ContatoRoute
+  EbookRoute: typeof EbookRoute
   GaleriaRoute: typeof GaleriaRoute
   HistoriaRoute: typeof HistoriaRoute
   HomenagensRoute: typeof HomenagensRoute
@@ -233,6 +246,13 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ebook': {
+      id: '/ebook'
+      path: '/ebook'
+      fullPath: '/ebook'
+      preLoaderRoute: typeof EbookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galeria': {
@@ -319,6 +339,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AcoesRoute: AcoesRoute,
   ContatoRoute: ContatoRoute,
+  EbookRoute: EbookRoute,
   GaleriaRoute: GaleriaRoute,
   HistoriaRoute: HistoriaRoute,
   HomenagensRoute: HomenagensRoute,
