@@ -5,6 +5,7 @@ import rodeioVista from "@/assets/rodeio-vista.jpg.asset.json";
 import lembrancaOrdenacao from "@/assets/lembranca-ordenacao.jpg.asset.json";
 import eremiterio from "@/assets/eremiterio.jpg.asset.json";
 import familiaAntiga from "@/assets/familia-antiga.jpg.asset.json";
+import { acervoFotos } from "./acervo-fotos";
 
 export const perfil = {
   nome: "Frei Rui Guido Depiné, OFM",
@@ -118,6 +119,7 @@ export type FotoGaleria = {
 };
 
 export const galeria: FotoGaleria[] = [
+  ...acervoFotos,
   {
     url: rodeioVista.url,
     alt: "Vista de Rodeio, Santa Catarina, com casas e igreja",
