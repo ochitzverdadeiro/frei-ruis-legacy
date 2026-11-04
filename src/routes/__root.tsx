@@ -23,6 +23,7 @@ const navegacao = [
   { to: "/escritos", rotulo: "Escritos" },
   { to: "/homilias", rotulo: "Homilias" },
   { to: "/acoes", rotulo: "Ações" },
+  { to: "/ebook", rotulo: "Ebook" },
   { to: "/galeria", rotulo: "Galeria" },
   { to: "/depoimentos", rotulo: "Depoimentos" },
   { to: "/homenagens", rotulo: "Homenagens" },
