@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ebook, precoFormatado } from "@/data/ebook";
-import freiRuiCapa from "@/assets/frei-rui-capa.jpg.asset.json";
+import freiRuiCapa from "@/assets/capa-livro-frei-rui.png.asset.json";
 
 export const Route = createFileRoute("/ebook")({
   head: () => {
