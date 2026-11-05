@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import capaLivro from "@/assets/capa-livro-frei-rui.png.asset.json";
 import { perfil } from "@/data/frei-rui";
 import freiRuiCapa from "@/assets/frei-rui-capa.jpg.asset.json";
 
@@ -46,6 +47,23 @@ function Inicio() {
             Frade da Ordem Franciscana Menor. Homem simples, alegre e resiliente, que fez da
             própria vida um caminho de serviço aos mais pobres.
           </p>
+          <Link
+            to="/ebook"
+            className="group mt-10 flex items-center gap-4 rounded-lg border border-border bg-background/70 p-3 pr-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <img
+              src={capaLivro.url}
+              alt="Capa do ebook Frei Rui"
+              className="h-20 w-auto rounded shadow-sm"
+              loading="lazy"
+            />
+            <span>
+              <span className="eyebrow block">Ebook</span>
+              <span className="mt-1 block font-serif text-lg text-foreground group-hover:text-accent">
+                Conheça o ebook →
+              </span>
+            </span>
+          </Link>
         </div>
       </section>
 
