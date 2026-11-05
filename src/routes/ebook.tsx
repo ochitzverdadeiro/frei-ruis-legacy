@@ -40,7 +40,7 @@ function Ebook() {
             <img
               src={freiRuiCapa.url}
               alt={`Capa do ebook ${ebook.titulo}`}
-              className="aspect-[3/4] w-full object-cover"
+              className="h-auto w-full"
               loading="eager"
             />
           </div>
