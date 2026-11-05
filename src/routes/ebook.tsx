@@ -86,15 +86,16 @@ function Ebook() {
             <p className="mt-2 text-sm text-muted-foreground">
               {ebook.formato}. Você recebe {ebook.entrega.join(" e ")}.
             </p>
-            <Link
-              to="/contato"
+            <a
+              href="https://loja.editoradialetica.com/literatura/frei-rui"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Comprar o ebook
-            </Link>
+            </a>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              A compra direta nesta página será aberta em breve. Enquanto isso, fale com a família
-              pelo Contato e reserve o seu exemplar.
+              A compra é feita com segurança na loja da Editora Dialética, que abre em uma nova aba.
             </p>
           </div>
         </div>
