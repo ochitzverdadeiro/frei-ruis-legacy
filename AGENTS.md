@@ -12,3 +12,4 @@
 - Production builds materialize original image manifests into same-origin `/images/` assets through `tooling/portable-images.mjs`; this preserves original photos while removing Lovable-only runtime asset routing.
 - Hostinger Node deployments use `vite.hostinger.config.ts` and `build:hostinger`; keep the default Lovable target separate so neither deployment overwrites the other's server target.
 - Imported gallery collections use asset manifests in `src/data/acervo-fotos.ts`, with byte-identical duplicates collapsed and pagination in the existing gallery to avoid loading hundreds of originals at once.
+- Keep `src/data/*.ts` free of asset and alias imports so `node --test` can import them directly; image imports belong in the route that renders them.
