@@ -135,7 +135,7 @@ function Ebook() {
           <p className="eyebrow">Cópia segura</p>
           <h3 className="mt-2 font-serif text-xl text-foreground">Por e-mail</h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            A mesma versão segue por e-mail, para você guardar e enviar a quem quiser.
+            A mesma versão segue por e-mail, para você guardar.
           </p>
         </div>
       </section>
