@@ -8,4 +8,5 @@
 - [x] Republicar e verificar o domínio oficial (depende do acesso à Hostinger)
 - [x] Importar as imagens da nova pasta do Drive e adicioná-las à galeria (494 originais distintos; 63 cópias idênticas)
 - [x] Página do ebook com preço, dados do livro, sumário e forma de entrega
+- [x] Botões de redes sociais na página inicial (Instagram, Facebook, YouTube)
 - [ ] Ativar o pagamento do ebook (Paddle) — depende do plano pago do Lovable
