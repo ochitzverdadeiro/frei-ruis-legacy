@@ -9,4 +9,5 @@
 - [x] Importar as imagens da nova pasta do Drive e adicioná-las à galeria (494 originais distintos; 63 cópias idênticas)
 - [x] Página do ebook com preço, dados do livro, sumário e forma de entrega
 - [x] Botões de redes sociais na página inicial (Instagram, Facebook, YouTube)
+- [x] Selo do Legado à esquerda da marca "Legado Frei Rui" no topo do site
 - [ ] Ativar o pagamento do ebook (Paddle) — depende do plano pago do Lovable

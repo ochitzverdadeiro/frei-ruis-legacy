@@ -159,10 +159,18 @@ function Cabecalho() {
       </nav>
 
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-        <Link to="/" className="group flex flex-col leading-tight">
-          <span className="eyebrow">Legado</span>
-          <span className="font-serif text-xl text-foreground transition-colors group-hover:text-accent">
-            Frei Rui Guido Depiné
+        <Link to="/" className="group flex items-center gap-3 leading-tight">
+          <img
+            src="/icon-512.png"
+            alt="Selo Legado Frei Rui — Paz e Bem"
+            className="h-12 w-12 shrink-0 rounded-full object-cover shadow-sm sm:h-14 sm:w-14"
+            loading="eager"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="eyebrow">Legado</span>
+            <span className="font-serif text-xl text-foreground transition-colors group-hover:text-accent">
+              Frei Rui Guido Depiné
+            </span>
           </span>
         </Link>
       </div>
