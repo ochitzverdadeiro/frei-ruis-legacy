@@ -1,7 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 import capaLivro from "@/assets/capa-livro-frei-rui.png.asset.json";
 import { perfil } from "@/data/frei-rui";
+import { redes } from "@/data/redes-sociais";
 import freiRuiCapa from "@/assets/frei-rui-capa.jpg.asset.json";
+
+const icones = {
+  instagram: Instagram,
+  facebook: Facebook,
+  youtube: Youtube,
+} as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
