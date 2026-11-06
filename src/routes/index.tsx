@@ -72,6 +72,28 @@ function Inicio() {
               </span>
             </span>
           </Link>
+
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <p className="eyebrow">Siga o legado</p>
+            <div className="flex items-center gap-3">
+              {redes.map((rede) => {
+                const Icone = icones[rede.id];
+                return (
+                  <a
+                    key={rede.id}
+                    href={rede.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={rede.rotulo}
+                    title={rede.rotulo}
+                    className="rounded-full border border-border bg-background/70 p-3 text-muted-foreground shadow-sm transition hover:-translate-y-0.5 hover:text-accent hover:shadow-md"
+                  >
+                    <Icone className="h-5 w-5" aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
